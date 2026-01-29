@@ -17,6 +17,7 @@ export interface ResumeData {
  */
 export interface Basics {
   name: string;
+  legalName?: string;
   label: string;
   email: string;
   phone?: string;

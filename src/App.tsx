@@ -27,6 +27,8 @@ function App() {
             {resume.basics.location.city}, {resume.basics.location.country}
           </span>
         </div>
+        <span className="text-xs text-gray-700">Legal Name:</span>
+        <p className="text-xs text-gray-500">{resume.basics.legalName}</p>
       </header>
 
       <section className="mb-6">
