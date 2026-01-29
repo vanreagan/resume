@@ -1,0 +1,37 @@
+{
+  "basics": {},
+  "skills": ["React", "TypeScript", "Tailwind CSS", "Next.js", "Docker", "SQL"],
+  "projects": [
+    {
+      "name": "Full Stack Deployment Configuration",
+      "description": "Deployed a Next.js application with SQLite on a custom VPS using Coolify and Docker.",
+      "keywords": ["DevOps", "Linux", "Self-hosting"]
+    },
+    {
+      "name": "Wedding Event Platform",
+      "description": "Designed and developed a custom wedding website using Next.js for client 'F&A' featuring dynamic guest management built with a simple REST API. Used JWT for authentication and guest identification through cookies handled by proxy to let the couple identify responses without requiring each guest to log in. A PostgreSQL database was used and interfaced with Drizzle ORM.",
+      "keywords": ["UX/UI", "Frontend", "Client Management", "Backend"]
+    },
+    {
+      "name": "Document Management System",
+      "description": "Built the basis of a system used to manage documents internally for the company I work for currently. The complete process was done by me except for wireframing and mockups. The tech stack was MERN with TypeScript, Shadcn UI, Mongoose as the ORM. Data modelling and documentation was done by me. Project was scrapped since the company ran out of budget for internal software projects.",
+      "keywords": [
+        "MERN",
+        "TypeScript",
+        "Shadcn UI",
+        "Mongoose",
+        "Data Modelling"
+      ]
+    },
+    {
+      "name": "Dockerization of Legacy Applications",
+      "description": "Containerized legacy applications built with PHP and MySQL to improve deployment efficiency and scalability using Docker. ",
+      "keywords": ["Docker", "Containerization", "Legacy Systems"]
+    },
+    {
+      "name": "Personal Portfolio Website",
+      "description": "Developed a personal portfolio website using React and Tailwind CSS to showcase personal projects.",
+      "keywords": ["React", "Tailwind CSS", "Portfolio"]
+    }
+  ]
+}
