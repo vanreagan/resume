@@ -1,35 +1,13 @@
 import { resumeData } from "./data/resume";
+import { Header } from "./components/Header";
 
 const resume = resumeData;
 
-function App() {
+export default function Document() {
   return (
     // A4/Letter Aspect Ratio Container: 8.5in x 11in = 204 x 264 tailwind units
-    <div className="max-w-204 mx-auto min-h-264 bg-white p-12 shadow-xl print:shadow-none print:p-0">
-      {/* Header */}
-      <header className="border-b-2 border-gray-800 pb-4 mb-6">
-        <h1 className="text-4xl font-bold uppercase tracking-tight text-gray-900">
-          {resume.basics.name}
-        </h1>
-        <p className="text-lg text-gray-600 mt-1">{resume.basics.label}</p>
-
-        {/* Contact Info Row */}
-        <div className="flex gap-4 text-sm mt-4 text-gray-500">
-          <span>
-            <a href={`mailto:${resume.basics.email}`}>{resume.basics.email}</a>
-          </span>
-          <span>•</span>
-          <span>
-            <a href={`tel:${resume.basics.phone}`}>{resume.basics.phone}</a>
-          </span>
-          <span>•</span>
-          <span>
-            {resume.basics.location.city}, {resume.basics.location.country}
-          </span>
-        </div>
-        <span className="text-xs text-gray-700">Legal Name:</span>
-        <p className="text-xs text-gray-500">{resume.basics.legalName}</p>
-      </header>
+    <div className="max-w-204 mx-auto min-h-264 bg-white p-12 shadow-xl print:shadow-none print:p-12 print:m-0 print:w-full">
+      <Header basics={resume.basics} />
 
       <section className="mb-6">
         <h2 className="text-xl font-bold uppercase tracking-wider mb-3 text-gray-800">
@@ -84,5 +62,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
