@@ -6,7 +6,7 @@ const resume = resumeData;
 export default function Document() {
   return (
     // A4/Letter Aspect Ratio Container: 8.5in x 11in = 204 x 264 tailwind units
-    <div className="max-w-204 mx-auto min-h-264 bg-white p-12 shadow-xl print:shadow-none print:p-12 print:m-0 print:w-full">
+    <div className="max-w-204 mx-auto min-h-264 bg-white p-12 shadow-xl print:shadow-none print:m-0 print:w-full">
       <Header basics={resume.basics} />
 
       <section className="mb-6">
