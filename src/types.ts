@@ -7,7 +7,6 @@ export interface ResumeData {
   education: Education[];
   skills: SkillGroup[];
   projects: Project[];
-  languages?: Language[];
   volunteering?: Volunteer[];
 }
 
@@ -30,6 +29,7 @@ export interface Basics {
     region?: string;
   };
   profiles?: SocialProfile[];
+  languages?: Language[];
 }
 
 export interface SocialProfile {
