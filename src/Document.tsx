@@ -1,5 +1,6 @@
 import { resumeData } from "./data/resume";
 import { Header } from "./components/Header";
+import { Skills } from "./components/Skills";
 
 const resume = resumeData;
 
@@ -9,21 +10,7 @@ export default function Document() {
     <div className="max-w-204 mx-auto min-h-264 bg-white p-12 shadow-xl print:shadow-none print:m-0 print:w-full">
       <Header basics={resume.basics} />
 
-      <section className="mb-6">
-        <h2 className="text-xl font-bold uppercase tracking-wider mb-3 text-gray-800">
-          Technical Skills
-        </h2>
-        <div className="flex flex-wrap gap-2">
-          {resume.skills?.map((skill) => (
-            <span
-              key={skill.name}
-              className="px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-md border border-gray-200"
-            >
-              {skill.name}
-            </span>
-          ))}
-        </div>
-      </section>
+      <Skills skills={resume.skills} />
 
       {/* Projects */}
       <section className="mb-6">
