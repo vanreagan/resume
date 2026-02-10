@@ -1,18 +1,20 @@
 import type { ResumeData } from "../types";
 
 // .env variables for privacy
-const NAME = import.meta.env.VITE_NAME;
-const LEGAL_NAME = import.meta.env.VITE_LEGAL_NAME;
-const EMAIL = import.meta.env.VITE_EMAIL;
-const PHONE = import.meta.env.VITE_PHONE;
-const CITY = import.meta.env.VITE_CITY;
-const REGION = import.meta.env.VITE_REGION;
-const COUNTRY = import.meta.env.VITE_COUNTRY;
+const NAME = import.meta.env.VITE_NAME || "Someone";
+const LEGAL_NAME = import.meta.env.VITE_LEGAL_NAME || "Someone Jr.";
+const PRONOUNS = import.meta.env.VITE_PRONOUNS || "they/them";
+const EMAIL = import.meta.env.VITE_EMAIL || "someone@example.com";
+const PHONE = import.meta.env.VITE_PHONE || "123-456-7890";
+const CITY = import.meta.env.VITE_CITY || "Somewhere";
+const REGION = import.meta.env.VITE_REGION || "Some Region";
+const COUNTRY = import.meta.env.VITE_COUNTRY || "Some Country";
 
 export const resumeData: ResumeData = {
   basics: {
     name: NAME,
     legalName: LEGAL_NAME,
+    pronouns: PRONOUNS,
     email: EMAIL,
     phone: PHONE,
     label: "Web Developer",
@@ -33,6 +35,11 @@ export const resumeData: ResumeData = {
         network: "LinkedIn",
         username: "ivanreagan",
         url: "https://www.linkedin.com/in/ivanreagan/",
+      },
+      {
+        network: "Website",
+        username: "vanreagan.dev",
+        url: "https://vanreagan.dev",
       },
     ],
   },
