@@ -33,7 +33,7 @@ export interface Basics {
 }
 
 export interface SocialProfile {
-  network: "GitHub" | "LinkedIn" | "Twitter" | "Website" | string;
+  network: "GitHub" | "LinkedIn" | "Website" | string;
   username: string;
   url: string;
 }
