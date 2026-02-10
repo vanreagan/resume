@@ -1,4 +1,5 @@
-import { MapPin, Mail, Phone, Globe, Linkedin, Github } from "lucide-react";
+import { MapPin, Mail, Phone, Globe } from "lucide-react";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import type { Basics } from "../types";
 
 const IS_LEGAL_NAME_VISIBLE = false;
@@ -57,9 +58,9 @@ export const Header = ({ basics }: { basics: Basics }) => {
           // Dynamic Icon mapping
           const Icon =
             profile.network.toLowerCase() === "github"
-              ? Github
+              ? AiFillGithub
               : profile.network.toLowerCase() === "linkedin"
-                ? Linkedin
+                ? AiFillLinkedin
                 : Globe;
 
           return (
