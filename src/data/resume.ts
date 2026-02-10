@@ -42,6 +42,16 @@ export const resumeData: ResumeData = {
         url: "https://vanreagan.dev",
       },
     ],
+    languages: [
+      {
+        language: "English",
+        fluency: "Fluent",
+      },
+      {
+        language: "Spanish",
+        fluency: "Native",
+      },
+    ],
   },
   skills: [
     {
@@ -225,16 +235,6 @@ export const resumeData: ResumeData = {
       studyType: "Incomplete Bachelor's Degree",
       startDate: "2015-08-01",
       endDate: "2021-05-01",
-    },
-  ],
-  languages: [
-    {
-      language: "English",
-      fluency: "Fluent",
-    },
-    {
-      language: "Spanish",
-      fluency: "Native",
     },
   ],
 };
