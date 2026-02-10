@@ -6,73 +6,97 @@ import {
 import type { Basics } from "../types";
 
 const IS_LEGAL_NAME_VISIBLE = false;
+const ARE_PRONOUNS_VISIBLE = true;
+const IS_PHONE_VISIBLE = true;
+
+const socialIconMap: Record<
+  string,
+  React.ComponentType<{ size: number; className?: string }>
+> = {
+  linkedin: Linkedin,
+  github: Github,
+  default: Globe,
+};
 
 export const Header = ({ basics }: { basics: Basics }) => {
   return (
-    <header className="mb-8 border-b border-gray-300 pb-6">
-      <div className="flex justify-between items-start mb-4">
-        <div className="space-y-1">
-          <h1 className="text-5xl font-bold tracking-tight text-gray-900">
-            {basics.name}{" "}
+    <header className="mb-10 border-b border-gray-300 pb-10">
+      <div className="flex justify-around items-start gap-6">
+        <div className="flex-1 space-y-2 mt-2">
+          <h1 className="text-5xl font-bold tracking-tight text-gray-900 leading-none">
+            {basics.name}
+            {ARE_PRONOUNS_VISIBLE && basics.pronouns && (
+              <span className="text-base font-normal text-gray-400 ml-2">
+                ({basics.pronouns})
+              </span>
+            )}
           </h1>
-          {IS_LEGAL_NAME_VISIBLE && basics.legalName ? (
-            <span className="text-sm text-gray-400 italic">
+
+          {IS_LEGAL_NAME_VISIBLE && basics.legalName && (
+            <span className="text-sm text-gray-400 italic block">
               ({basics.legalName})
             </span>
-          ) : null}
-          <p className="text-xl font-medium text-violet-500 tracking-wide">
+          )}
+
+          <p className="text-2xl font-medium text-violet-600 tracking-wide">
             {basics.label}
           </p>
-        </div>
 
-        <div className="flex items-center gap-1.5 text-gray-400 font-medium mt-2">
-          <MapPin size={16} />
-          <span>
-            {basics.location.city},{" "}
-            {`${basics.location.region ? basics.location.region + ", " : ""}`}{" "}
-            {basics.location.country}
-          </span>
-        </div>
-      </div>
-
-      {/* Middle Row: Contact Info ONLY */}
-      <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 mb-6">
-        <div className="flex items-center gap-1.5 hover:text-violet-500 transition-colors">
-          <Mail size={16} className="text-gray-400" />
-          <a href={`mailto:${basics.email}`}>{basics.email}</a>
-        </div>
-
-        {basics.phone && (
-          <div className="flex items-center gap-1.5 hover:text-violet-500 transition-colors">
-            <Phone size={16} className="text-gray-400" />
-            <a href={`tel:${basics.phone}`}>{basics.phone}</a>
+          <div className="flex items-center gap-2.5 justify-start text-gray-500">
+            <MapPin size={16} className="shrink-0" />
+            <span className="text-right">
+              {basics.location.city}, {basics.location.country}
+            </span>
           </div>
-        )}
+        </div>
 
-        {basics.profiles?.map((profile) => {
-          const Icon =
-            profile.network.toLowerCase() === "github"
-              ? Github
-              : profile.network.toLowerCase() === "linkedin"
-                ? Linkedin
-                : Globe;
-          return (
-            <div
-              key={profile.network}
-              className="flex items-center gap-1.5 hover:text-violet-500 transition-colors"
-            >
-              <Icon size={16} className="text-gray-400" />
-              <a href={profile.url} target="_blank" rel="noreferrer">
-                {profile.username}
+        <div className="shrink-0 bg-slate-50 rounded-xl p-4 border border-gray-200 print:bg-transparent print:border-none print:p-0">
+          <div className="flex flex-col gap-2.5 text-sm font-medium text-gray-600">
+            <div className="flex items-center gap-2.5 justify-start hover:text-violet-600 transition-colors">
+              <Mail size={18} className="text-violet-500 shrink-0" />
+              <a href={`mailto:${basics.email}`} className="text-right">
+                {basics.email}
               </a>
             </div>
-          );
-        })}
+
+            {IS_PHONE_VISIBLE && basics.phone && (
+              <div className="flex items-center gap-2.5 justify-start hover:text-violet-600 transition-colors">
+                <Phone size={18} className="text-violet-500 shrink-0" />
+                <a href={`tel:${basics.phone}`} className="text-right">
+                  {basics.phone}
+                </a>
+              </div>
+            )}
+            {basics.profiles?.map((profile) => {
+              const Icon =
+                socialIconMap[profile.network.toLowerCase()] ||
+                socialIconMap["default"];
+
+              return (
+                <div
+                  key={profile.network}
+                  className="flex items-center gap-2.5 justify-start hover:text-violet-600 transition-colors"
+                >
+                  <Icon size={18} className="text-violet-500 shrink-0" />
+                  <a
+                    href={profile.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-right"
+                  >
+                    {profile.username}
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
-      {/* Bottom Row: Summary */}
-      <div className="text-gray-700 leading-relaxed text-justify max-w-none">
-        {basics.summary}
+      <div className="mt-8">
+        <p className="text-gray-700 leading-relaxed text-justify text-base">
+          {basics.summary}
+        </p>
       </div>
     </header>
   );
