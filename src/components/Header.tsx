@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, Globe } from "lucide-react";
+import { MapPin, Mail, Phone, Globe, Languages } from "lucide-react";
 import {
   AiFillLinkedin as Linkedin,
   AiFillGithub as Github,
@@ -48,6 +48,15 @@ export const Header = ({ basics }: { basics: Basics }) => {
               {basics.location.city}, {basics.location.country}
             </span>
           </div>
+
+          <div className="flex items-center gap-2.5 justify-start text-sm font-medium text-gray-600 mt-4">
+            <Languages size={16} className="shrink-0" />
+            <span className="text-right">
+              {basics.languages
+                ?.map((lang) => `${lang.language} (${lang.fluency})`)
+                .join(" • ")}
+            </span>
+          </div>
         </div>
 
         <div className="shrink-0 bg-slate-50 rounded-xl p-4 border border-gray-200 print:bg-transparent print:border-none print:p-0">
@@ -89,6 +98,20 @@ export const Header = ({ basics }: { basics: Basics }) => {
                 </div>
               );
             })}
+            {/* 
+            <div className="mt-4 pt-3 border-t border-gray-200">
+              <div className="flex items-center gap-2.5 justify-end text-sm font-medium text-gray-600">
+               
+                <ul className="text-left">
+                  {basics.languages?.map((lang) => (
+                    <li key={lang.language}>
+                      {lang.language} ({lang.fluency})
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+             */}
           </div>
         </div>
       </div>
