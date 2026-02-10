@@ -6,6 +6,7 @@ const LEGAL_NAME = import.meta.env.VITE_LEGAL_NAME;
 const EMAIL = import.meta.env.VITE_EMAIL;
 const PHONE = import.meta.env.VITE_PHONE;
 const CITY = import.meta.env.VITE_CITY;
+const REGION = import.meta.env.VITE_REGION;
 const COUNTRY = import.meta.env.VITE_COUNTRY;
 
 export const resumeData: ResumeData = {
@@ -20,6 +21,7 @@ export const resumeData: ResumeData = {
     location: {
       city: CITY,
       country: COUNTRY,
+      region: REGION,
     },
     profiles: [
       {
