@@ -43,14 +43,14 @@ export const Header = ({ basics }: { basics: Basics }) => {
           </p>
 
           <div className="flex items-center gap-2.5 justify-start text-gray-500">
-            <MapPin size={16} className="shrink-0" />
+            <MapPin size={16} className="shrink-0" aria-hidden="true" />
             <span className="text-right">
               {basics.location.city}, {basics.location.country}
             </span>
           </div>
 
           <div className="flex items-center gap-2.5 justify-start text-sm font-medium text-gray-600 mt-4">
-            <Languages size={16} className="shrink-0" />
+            <Languages size={16} className="shrink-0" aria-hidden="true" />
             <span className="text-right">
               {basics.languages
                 ?.map((lang) => `${lang.language} (${lang.fluency})`)
@@ -62,7 +62,11 @@ export const Header = ({ basics }: { basics: Basics }) => {
         <div className="shrink-0 bg-slate-50 rounded-xl p-4 border border-gray-200 print:bg-transparent print:border-none print:p-0">
           <div className="flex flex-col gap-2.5 text-sm font-medium text-gray-600">
             <div className="flex items-center gap-2.5 justify-start hover:text-violet-600 transition-colors">
-              <Mail size={18} className="text-violet-500 shrink-0" />
+              <Mail
+                size={18}
+                className="text-violet-500 shrink-0"
+                aria-hidden="true"
+              />
               <a href={`mailto:${basics.email}`} className="text-right">
                 {basics.email}
               </a>
@@ -70,7 +74,11 @@ export const Header = ({ basics }: { basics: Basics }) => {
 
             {IS_PHONE_VISIBLE && basics.phone && (
               <div className="flex items-center gap-2.5 justify-start hover:text-violet-600 transition-colors">
-                <Phone size={18} className="text-violet-500 shrink-0" />
+                <Phone
+                  size={18}
+                  className="text-violet-500 shrink-0"
+                  aria-hidden="true"
+                />
                 <a href={`tel:${basics.phone}`} className="text-right">
                   {basics.phone}
                 </a>
@@ -86,7 +94,11 @@ export const Header = ({ basics }: { basics: Basics }) => {
                   key={profile.network}
                   className="flex items-center gap-2.5 justify-start hover:text-violet-600 transition-colors"
                 >
-                  <Icon size={18} className="text-violet-500 shrink-0" />
+                  <Icon
+                    size={18}
+                    className="text-violet-500 shrink-0"
+                    aria-hidden="true"
+                  />
                   <a
                     href={profile.url}
                     target="_blank"
