@@ -22,7 +22,7 @@ export const Education = ({ education }: { education: EducationType[] }) => {
                 {edu.studyType} in {edu.area}
               </p>
             </div>
-            <div className="text-sm font-medium text-gray-500 tabular-nums text-right">
+            <div className="text-sm font-medium text-gray-500 tabular-nums text-right whitespace-nowrap">
               {formatResumeDate(edu.startDate)} &nbsp;&mdash;&nbsp;
               {formatResumeDate(edu.endDate)}
             </div>
