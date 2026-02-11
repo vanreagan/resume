@@ -20,7 +20,7 @@ const socialIconMap: Record<
 
 export const Header = ({ basics }: { basics: Basics }) => {
   return (
-    <header className="border-b border-gray-300 ">
+    <header className="pb-2">
       <div className="flex justify-around items-start gap-6">
         <div className="flex-1 space-y-2 mt-2">
           <h1 className="text-5xl font-bold tracking-tight text-gray-900 leading-none">

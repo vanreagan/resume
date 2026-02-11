@@ -3,8 +3,8 @@ import type { Project } from "../types";
 
 export const Projects = ({ projects }: { projects: Project[] }) => {
   return (
-    <section>
-      <h2 className="text-xl font-bold uppercase tracking-widest text-gray-800 mb-6 pb-2">
+    <section className="flex flex-col gap-4 pb-2">
+      <h2 className="text-xl font-bold uppercase tracking-widest text-gray-800 ">
         Key Projects
       </h2>
 
