@@ -93,60 +93,57 @@ export const resumeData: ResumeData = {
   ],
   projects: [
     {
-      name: "Wedding Event Website + Guest Management App",
+      name: "Wedding Event Platform",
       description:
-        "Designed and developed a custom wedding website using Next.js for client 'F&A' featuring dynamic guest management built with a simple REST API. Used JWT for authentication and guest identification through cookies handled by proxy to let the couple identify responses without requiring each guest to log in. A PostgreSQL database was used and interfaced with Drizzle ORM.",
+        "A custom full-stack wedding website and guest management portal handling RSVP logic for 100+ guests.",
+      highlights: [
+        "Engineered a secure authentication system using JWT and HttpOnly cookies, allowing passwordless guest identification via proxy.",
+        "Designed a type-safe relational database schema using PostgreSQL and Drizzle ORM to manage complex guest relationships.",
+        "Built a responsive, theme-aware UI with Next.js and Tailwind CSS, prioritizing mobile accessibility for non-technical users.",
+        "Deployed via Docker containers to a custom VPS, managing Nginx reverse proxy configurations.",
+      ],
       keywords: [
         "Next.js",
         "TypeScript",
-        "Tailwind CSS",
         "PostgreSQL",
         "Drizzle ORM",
         "JWT",
-        "REST API",
-        "UX/UI Design",
-      ],
-      highlights: [
-        "Developed a full-stack web application with a focus on user experience and responsive design.",
-        "Implemented secure guest authentication and management features using JWT and cookies.",
-        "Designed a visually appealing and user-friendly interface tailored to the client's wedding theme.",
-        "Worked according to the size and scope of the project, avoiding overengineering and focusing on function and simplicity.",
+        "Docker",
       ],
       startDate: "2025-10-15",
       endDate: "2026-02-20",
       url: "https://www.feryangel.com",
     },
     {
-      name: "Document Management System",
+      name: "Internal Document Management System",
       description:
-        "Built the basis of a system used to manage documents internally for the company I work for currently. The complete process was done by me except for wireframing and mockups. The tech stack was MERN with TypeScript, Shadcn UI, Mongoose as the ORM. Data modelling and documentation was done by me. Project was scrapped since the company ran out of budget for internal software projects.",
+        "An enterprise-grade platform for digitizing and managing secure internal company workflows.",
+      highlights: [
+        "Architected a scalable MERN stack solution (MongoDB, Express, React, Node.js) to replace legacy manual file tracking.",
+        "Implemented Mongoose schemas for strict data validation and efficient document indexing.",
+        "Developed a reusable UI component library using Shadcn UI and TypeScript to standardize internal tooling.",
+      ],
       keywords: [
         "MongoDB",
         "Express",
         "React",
         "Node.js",
         "TypeScript",
-        "Mongoose",
-        "REST API",
         "Shadcn UI",
       ],
-      highlights: [
-        "Designed and implemented a full-stack document management system using the MERN stack.",
-        "Created a user-friendly interface with Shadcn UI to enhance user experience and accessibility.",
-        "Developed robust backend services with Express and Mongoose for efficient data handling and storage.",
-      ],
+
       startDate: "2024-06-01",
     },
     {
       name: "Dockerization of Legacy Applications",
       description:
-        "Containerized legacy applications built with PHP and MySQL to improve deployment efficiency and scalability using Docker. Created Dockerfiles and Docker Compose configurations to streamline the setup process for development and production environments.",
-      keywords: ["Docker", "Docker Compose", "DevOps", "Legacy Systems"],
+        "A DevOps initiative to containerize and stabilize legacy PHP/MySQL infrastructure.",
       highlights: [
-        "Successfully containerized legacy PHP applications, enhancing deployment speed and consistency across environments.",
-        "Developed Dockerfiles and Docker Compose configurations to simplify the setup process for both development and production.",
-        "Improved application scalability and maintainability through containerization, reducing downtime during updates.",
+        "Migrated monolithic legacy PHP applications to Docker Compose environments, eliminating environment-parity issues.",
+        "Wrote optimized Dockerfiles for multi-stage builds, reducing image sizes and deployment times.",
+        "Established a reproducible local development environment for the engineering team.",
       ],
+      keywords: ["Docker", "Linux", "Bash", "PHP", "MySQL"],
       startDate: "2024-11-01",
       endDate: "2025-02-28",
     },
@@ -228,9 +225,9 @@ export const resumeData: ResumeData = {
   ],
   education: [
     {
-      institution: "Autonomus University of Ciudad Juarez",
+      institution: "Autonomous University of Ciudad Juarez",
       area: "Digital Systems and Communications Engineering",
-      studyType: "Incomplete Bachelor's Degree",
+      studyType: "Coursework towards Bachelor's Degree",
       startDate: "2015-08-01",
       endDate: "2021-05-01",
     },
