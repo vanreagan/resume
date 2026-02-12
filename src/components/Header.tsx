@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, Globe, Languages } from "lucide-react";
+import { MapPin, Mail, Phone, Globe, BookCheck } from "lucide-react";
 import {
   AiFillLinkedin as Linkedin,
   AiFillGithub as Github,
@@ -50,7 +50,7 @@ export const Header = ({ basics }: { basics: Basics }) => {
           </div>
 
           <div className="flex items-center gap-2.5 justify-start text-sm font-medium text-gray-600 mt-4">
-            <Languages size={16} className="shrink-0" aria-hidden="true" />
+            <BookCheck size={16} className="shrink-0" aria-hidden="true" />
             <span className="text-right">
               {basics.languages
                 ?.map((lang) => `${lang.language} (${lang.fluency})`)
