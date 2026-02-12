@@ -3,8 +3,8 @@ import { formatResumeDate } from "../utils/date";
 
 export const Education = ({ education }: { education: EducationType[] }) => {
   return (
-    <section className="flex flex-col gap-4 pb-2">
-      <h2 className="text-xl font-bold uppercase tracking-widest text-gray-800 ">
+    <section className="flex flex-col gap-4 pb-2 break-inside-avoid">
+      <h2 className="text-xl font-bold uppercase tracking-widest text-gray-800 mt-2 ">
         Education
       </h2>
 

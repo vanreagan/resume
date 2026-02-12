@@ -3,7 +3,7 @@ import type { SkillGroup } from "../types";
 export const Skills = ({ skills }: { skills: SkillGroup[] }) => {
   return (
     <section className="flex flex-col gap-4 pb-2">
-      <h2 className="text-xl font-bold uppercase tracking-widest text-gray-800">
+      <h2 className="text-xl font-bold uppercase tracking-widest text-gray-800 mt-2">
         Technical Skills
       </h2>
 
