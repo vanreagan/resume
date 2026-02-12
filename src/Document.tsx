@@ -17,7 +17,7 @@ export default function Document() {
 
   return (
     // A4/Letter Aspect Ratio Container: 8.5in x 11in = 204 x 264 tailwind units
-    <div className="max-w-204 mx-auto min-h-264 bg-white p-12 shadow-xl print:shadow-none print:m-0 print:w-full print:p-0 flex flex-col gap-4">
+    <div className="max-w-204 mx-auto min-h-264 bg-white p-12 shadow-xl print:shadow-none print:m-0 print:w-full print:p-0 flex flex-col gap-4 ">
       <Header basics={resume.basics} />
       <Skills skills={resume.skills} />
       <Education education={resume.education} />
@@ -27,7 +27,7 @@ export default function Document() {
       <div className="fixed bottom-8 right-8 no-print">
         <button
           onClick={() => window.print()}
-          className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-md shadow-lg transition-all cursor-pointer"
+          className="bg-accent hover:bg-accent-light text-white font-bold py-3 px-6 rounded-md shadow-lg transition-all cursor-pointer"
         >
           Download PDF
         </button>

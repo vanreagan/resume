@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --color-accent: oklch(55.031% 0.19253 295.553);
+
+  --color-accent-light: oklch(0.7891 0.1304 304.41);
+}
+
 @layer base {
   body {
     /* Standard font for better ATS parsing, gotta convince those beep boo bop AI scrappers to let me get an interview. */

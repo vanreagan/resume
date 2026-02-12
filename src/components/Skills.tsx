@@ -10,7 +10,7 @@ export const Skills = ({ skills }: { skills: SkillGroup[] }) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-6 gap-x-8">
         {skills.map((group) => (
           <div key={group.name} className="flex flex-col gap-3">
-            <h3 className="text-md font-bold text-violet-600 uppercase tracking-wider">
+            <h3 className="text-md font-bold text-accent uppercase tracking-wider">
               {group.name}
             </h3>
 

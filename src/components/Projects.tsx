@@ -13,7 +13,7 @@ export const Projects = ({ projects }: { projects: Project[] }) => {
         {projects.map((project) => (
           <div key={project.name} className="group break-inside-avoid">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
-              <h3 className="text-lg font-bold text-gray-900 group-hover:text-violet-600 transition-colors">
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-accent transition-colors">
                 {project.name}
               </h3>
 
@@ -23,7 +23,7 @@ export const Projects = ({ projects }: { projects: Project[] }) => {
                     href={project.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-1 text-sm text-gray-500 hover:text-violet-600 font-medium"
+                    className="flex items-center gap-1 text-sm text-gray-500 hover:text-accent font-medium"
                   >
                     <ExternalLink size={14} />
                     <span>Visit Site</span>
@@ -34,7 +34,7 @@ export const Projects = ({ projects }: { projects: Project[] }) => {
                     href={project.repo}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-1 text-sm text-gray-500 hover:text-violet-600 font-medium"
+                    className="flex items-center gap-1 text-sm text-gray-500 hover:text-accent font-medium"
                   >
                     <Github size={14} />
                     <span>Source</span>
@@ -61,7 +61,7 @@ export const Projects = ({ projects }: { projects: Project[] }) => {
               {project.keywords?.map((tech) => (
                 <span
                   key={tech}
-                  className="text-xs font-mono text-violet-600 bg-violet-50 px-2 py-0.5 rounded border border-violet-100"
+                  className="text-xs font-mono text-accent bg-violet-50 px-2 py-0.5 rounded border border-violet-100"
                 >
                   {tech}
                 </span>

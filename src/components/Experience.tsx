@@ -24,7 +24,7 @@ export const Experience = ({ work }: { work: WorkExperience[] }) => {
             </div>
 
             {/* Company Name */}
-            <div className="text-base text-violet-600 font-medium mb-3">
+            <div className="text-base text-accent font-medium mb-3">
               {job.url ? (
                 <a
                   href={job.url}
@@ -59,7 +59,7 @@ export const Experience = ({ work }: { work: WorkExperience[] }) => {
                 {job.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="text-xs font-mono text-violet-600 bg-violet-50 px-2 py-0.5 rounded border border-violet-100"
+                    className="text-xs font-mono text-accent bg-violet-50 px-2 py-0.5 rounded border border-violet-100"
                   >
                     {tech}
                   </span>

@@ -38,7 +38,7 @@ export const Header = ({ basics }: { basics: Basics }) => {
             </span>
           )}
 
-          <p className="text-2xl font-medium text-violet-600 tracking-wide">
+          <p className="text-2xl font-medium text-accent tracking-wide">
             {basics.label}
           </p>
 
@@ -61,10 +61,10 @@ export const Header = ({ basics }: { basics: Basics }) => {
 
         <div className="shrink-0 bg-slate-50 rounded-xl p-4 border border-gray-200 print:bg-transparent print:border-none print:p-0">
           <div className="flex flex-col gap-2.5 text-sm font-medium text-gray-600">
-            <div className="flex items-center gap-2.5 justify-start hover:text-violet-600 transition-colors">
+            <div className="flex items-center gap-2.5 justify-start hover:text-accent-light transition-colors">
               <Mail
                 size={18}
-                className="text-violet-500 shrink-0"
+                className="text-accent shrink-0"
                 aria-hidden="true"
               />
               <a href={`mailto:${basics.email}`} className="text-right">
@@ -73,10 +73,10 @@ export const Header = ({ basics }: { basics: Basics }) => {
             </div>
 
             {IS_PHONE_VISIBLE && basics.phone && (
-              <div className="flex items-center gap-2.5 justify-start hover:text-violet-600 transition-colors">
+              <div className="flex items-center gap-2.5 justify-start hover:text-accent-light transition-colors">
                 <Phone
                   size={18}
-                  className="text-violet-500 shrink-0"
+                  className="text-accent shrink-0"
                   aria-hidden="true"
                 />
                 <a href={`tel:${basics.phone}`} className="text-right">
@@ -92,11 +92,11 @@ export const Header = ({ basics }: { basics: Basics }) => {
               return (
                 <div
                   key={profile.network}
-                  className="flex items-center gap-2.5 justify-start hover:text-violet-600 transition-colors"
+                  className="flex items-center gap-2.5 justify-start hover:text-accent-light transition-colors"
                 >
                   <Icon
                     size={18}
-                    className="text-violet-500 shrink-0"
+                    className="text-accent shrink-0"
                     aria-hidden="true"
                   />
                   <a
