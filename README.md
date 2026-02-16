@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# Resume-as-Code
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+As a Web Developer, I believe a resume should be treated like any other software product: it needs to be maintainable, accessible, type-safe, and visually pixel-perfect. Instead of wrestling with MS Word or Figma (trust me, I've been there), I built this resume generator.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework:** React + Vite
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4 (Using modern `@theme` variables and print modifiers)
+- **Icons:** Lucide React & React Icons
 
-## React Compiler
+## Key Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **Strictly ATS-Optimized:** Built with semantic HTML (`<header>`, `<section>`, `<ul>`) to ensure AI parsers and Applicant Tracking Systems can read the text layer perfectly.
+- **Separation of Concerns:** The UI components are completely decoupled from the data. All resume content lives in a structured `resume.ts` object, making updates trivial.
+- **Privacy-First Architecture:** Personal Identifiable Information (PII) like my phone number and email are injected at build time using Vite Environment Variables (`.env`), keeping my public repository safe from scrapers.
+- **Print-Perfect CSS:** Utilizes custom `@media print` queries and Tailwind's `print:` modifiers to strip out backgrounds, fix margins, and ensure a flawless PDF export via the browser's native print engine.
 
-## Expanding the ESLint configuration
+## Using the template
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+In case you wanted to use my template, these are the steps to follow.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository:**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+   ```bash
+   git clone [https://github.com/vanreagan/resume.git](https://github.com/vanreagan/resume.git)
+   cd resume
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Set up environment variables:
+   Copy the example file to create your own local .env.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+   ```bash
+   cp .env.example .env
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+   Fill in your personal details in the .env file. These are injected into resume.ts to keep your contact info out of version control. Some of these are optional, so feel free to skip the non-essentials.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. Install dependencies and run:
+
+   ```bash
+   npm install
+   npm run dev
+   ```
+
+## Exporting to PDF
+
+To generate the final document:
+
+1. Run the app locally (npm run dev).
+
+2. Press Ctrl + P (or Cmd + P on Mac) or use the `Download PDF` button.
+
+3. Important Print Settings:
+   - Destination: Save as PDF
+
+   - Margins: Default
+
+   - Headers and Footers: Unchecked
+
+   - Background Graphics: Checked
