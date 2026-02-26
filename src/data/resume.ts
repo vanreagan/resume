@@ -5,6 +5,8 @@ const NAME = import.meta.env.VITE_NAME || "Someone";
 const LEGAL_NAME = import.meta.env.VITE_LEGAL_NAME || "Someone Jr.";
 const PRONOUNS = import.meta.env.VITE_PRONOUNS || "they/them";
 const EMAIL = import.meta.env.VITE_EMAIL || "someone@example.com";
+const SECONDARY_EMAIL =
+  import.meta.env.VITE_SECONDARY_EMAIL || "someone.else@example.com";
 const PHONE = import.meta.env.VITE_PHONE || "123-456-7890";
 const CITY = import.meta.env.VITE_CITY || "Somewhere";
 const REGION = import.meta.env.VITE_REGION || "Some Region";
@@ -16,6 +18,7 @@ export const resumeData: ResumeData = {
     legalName: LEGAL_NAME,
     pronouns: PRONOUNS,
     email: EMAIL,
+    secondaryEmail: SECONDARY_EMAIL,
     phone: PHONE,
     label: "Web Developer",
     summary:
