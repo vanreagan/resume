@@ -3,11 +3,7 @@ import {
   AiFillLinkedin as Linkedin,
   AiFillGithub as Github,
 } from "react-icons/ai";
-import type { Basics } from "../types";
-
-const IS_LEGAL_NAME_VISIBLE = false;
-const ARE_PRONOUNS_VISIBLE = true;
-const IS_PHONE_VISIBLE = true;
+import type { Basics, Option } from "../types";
 
 const socialIconMap: Record<
   string,
@@ -18,25 +14,35 @@ const socialIconMap: Record<
   default: Globe,
 };
 
-export const Header = ({ basics }: { basics: Basics }) => {
+export const Header = ({
+  basics,
+  options,
+}: {
+  basics: Basics;
+  options: Option[];
+}) => {
   return (
     <header className="pb-2">
       <div className="flex justify-around items-start gap-6">
         <div className="flex-1 space-y-2 mt-2">
           <h1 className="text-5xl font-bold tracking-tight text-gray-900 leading-none">
             {basics.name}
-            {ARE_PRONOUNS_VISIBLE && basics.pronouns && (
-              <span className="text-base font-normal text-gray-400 ml-2">
-                ({basics.pronouns})
-              </span>
-            )}
+            {options.find((option) => option.id === "includePronouns")
+              ?.checked &&
+              basics.pronouns && (
+                <span className="text-base font-normal text-gray-400 ml-2">
+                  ({basics.pronouns})
+                </span>
+              )}
           </h1>
 
-          {IS_LEGAL_NAME_VISIBLE && basics.legalName && (
-            <span className="text-sm text-gray-400 italic block">
-              ({basics.legalName})
-            </span>
-          )}
+          {options.find((option) => option.id === "includeLegalName")
+            ?.checked &&
+            basics.legalName && (
+              <span className="text-sm text-gray-400 italic block">
+                ({basics.legalName})
+              </span>
+            )}
 
           <p className="text-2xl font-medium text-accent tracking-wide">
             {basics.label}
@@ -71,19 +77,38 @@ export const Header = ({ basics }: { basics: Basics }) => {
                 {basics.email}
               </a>
             </div>
+            {options.find((option) => option.id === "includeSecondaryEmail")
+              ?.checked &&
+              basics.secondaryEmail && (
+                <div className="flex items-center gap-2.5 justify-start hover:text-accent-light transition-colors">
+                  <Mail
+                    size={18}
+                    className="text-accent shrink-0"
+                    aria-hidden="true"
+                  />
+                  <a
+                    href={`mailto:${basics.secondaryEmail}`}
+                    className="text-right"
+                  >
+                    {basics.secondaryEmail}
+                  </a>
+                </div>
+              )}
 
-            {IS_PHONE_VISIBLE && basics.phone && (
-              <div className="flex items-center gap-2.5 justify-start hover:text-accent-light transition-colors">
-                <Phone
-                  size={18}
-                  className="text-accent shrink-0"
-                  aria-hidden="true"
-                />
-                <a href={`tel:${basics.phone}`} className="text-right">
-                  {basics.phone}
-                </a>
-              </div>
-            )}
+            {options.find((option) => option.id === "includePhoneNumber")
+              ?.checked &&
+              basics.phone && (
+                <div className="flex items-center gap-2.5 justify-start hover:text-accent-light transition-colors">
+                  <Phone
+                    size={18}
+                    className="text-accent shrink-0"
+                    aria-hidden="true"
+                  />
+                  <a href={`tel:${basics.phone}`} className="text-right">
+                    {basics.phone}
+                  </a>
+                </div>
+              )}
             {basics.profiles?.map((profile) => {
               const Icon =
                 socialIconMap[profile.network.toLowerCase()] ||
