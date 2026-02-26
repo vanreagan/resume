@@ -20,6 +20,7 @@ export interface Basics {
   pronouns?: string;
   label: string;
   email: string;
+  secondaryEmail?: string;
   phone?: string;
   url?: string;
   summary: string;
@@ -102,4 +103,12 @@ export interface Volunteer {
   endDate?: string;
   summary: string;
   highlights?: string[];
+}
+
+// Options type
+
+export interface Option {
+  id: string;
+  label: string;
+  checked: boolean;
 }
